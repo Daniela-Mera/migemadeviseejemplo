@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Asignaturas</h1>
+
+<div id="asignaturas">
+  <table>
+    <thead>
+      <tr>
+        <th>Asignatura</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @asignaturas.each do |asignatura| %>
+        <tr>
+          <td><%= asignatura.nombre %></td>
+          <td><%= link_to "Ver asignatura", asignatura %></td>
+        </tr>                
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New asignatura", new_asignatura_path %>
+
