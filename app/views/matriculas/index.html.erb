@@ -1,0 +1,36 @@
+<h1>Soy un index de matriculas</h1>
+<!--
+<h2>MUESTRO TODAS LAS ASIGNATURAS Y USUARIOS</h2>
+<h3>Usuarios:</h3>
+<% @usuarios.each do |u| %>
+          <%= u.email %><br>
+<% end %>
+<br><br>
+<h3>Asignaturas:</h3>
+<% @asignaturas.each do |a| %>
+          <%= a.nombre %><br>
+<% end %>
+-->
+<h3>Usuario activo</h3>
+<span><%= current_user.name %>, <%= current_user.email %></span>
+
+<br>
+<!-- Mostrar las matriculas actuales del usuario -->
+    <h4>Asignaturas matriculadas del usuario</h4>
+    <% @us2.each do |a| %>
+        <%= a.id %> - <%= a.nombre %> <br>   
+    <% end %>
+
+<br>
+<h4>Formulario para matricular</h4>
+    <!-- Cuando se active esa url, debe mostrar -->
+    <%= form_with url: "/matriculas/new", method: :get do |f| %>
+
+        <%= f.hidden_field :user_id, :value => current_user.id %> <br><br>
+
+        <%= f.label :asignatura %> <br>    
+        <%= select( nil, "asig", Asignatura.all.collect{ |a| [a.nombre, a.id] } ) %> <br><br>
+
+        <%= f.submit "Matricularme" %>
+
+    <% end %>

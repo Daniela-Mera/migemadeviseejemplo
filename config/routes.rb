@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   # root "articles#index"
   root to: "home#index"
-
+  get "/matriculas/form", to:"matriculas#index"   
+  get "/matriculas/new", to:"matriculas#new" 
 end
+
