@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   root to: "home#index"
   get "/matriculas/form", to:"matriculas#index"   
   get "/matriculas/new", to:"matriculas#new" 
+  get "/matriculas/eliminar", to:"matriculas#eliminar"
 end
 
