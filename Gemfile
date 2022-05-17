@@ -8,6 +8,8 @@ gem 'devise'
 
 # Gema para dar formato
 gem 'bootstrap'
+gem 'jquery-rails'
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.4"
