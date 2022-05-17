@@ -15,29 +15,24 @@
 
   <body>
 
-    <!-- NavBar -->
-      <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="">
-          <img src="/img/DaniToon2.jpg" alt="" width="40" height="40">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/asignaturas">Asignaturas</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu del usuario
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <% if user_signed_in? %>
+    <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">
+            <img src="/img/DaniToon2.jpg" alt="" width="40" height="40">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" navbar>
+            <a class="navbar-brand" href="/">Home</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/asignaturas">Asignaturas</a></li>
+              <!-- Menu desplegable con opciones de usuario -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menú del usuario</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <% if user_signed_in? %>
                     <span class="dropdown-item disabled">Bienvenid@ <%= current_user.name %></span>
                     <span class="dropdown-item disabled"><%= current_user.email %></span>
                     <li><hr class="dropdown-divider"></li>                  
@@ -49,23 +44,20 @@
                     <li><a class="dropdown-item" href="/users/sign_in">Iniciar sesion</a></li>
                     <li><a class="dropdown-item" href="/users/sign_up">Registrarse</a></li>                  
                   <% end %>
-              </ul>
-            </li>
-            <!-- 
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Input y boton de busqueda -->
+            <!--
+            <form class="d-flex">
+                <input class="form-control me-2 " type="search" placeholder="pronto..." aria-label="Search">
+                <button class="btn " type="submit">Buscar</button>
+            </form>
             -->
-          </ul>
-          <!--
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-          -->
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      <br>
     <!-- Alertas de devise -->
       <div class="container">
         <p style="color: red"><%= notice %></p>
@@ -78,7 +70,7 @@
     <!-- Footer -->
       <br><br>
       <div class="container-fluid text-center bg-light">
-        <span>Mayo 2022 | Ideado por Daniela mientras aprendía RoR con devise y relaciones 1-n y n-n</span>
+        <span>Mayo 2022 | Ideado por Daniela mientras aprendía RoR con devise y relaciones n-n</span>
       </div>
 
 
